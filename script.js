@@ -12,19 +12,12 @@ function minDate(dates) {
 	// 	}
 	// }
 	// return min;
+
+	let min = dates[0];
 	for (let i = 1; i < dates.length; i++) {
-        let d1 = dates[i].split('/'); 
-        let d2 = min.split('/');      
-
-        if (
-            d1[0] < d2[0] ||  
-            (d1[0] === d2[0] && d1[1] < d2[1]) ||  
-            (d1[0] === d2[0] && d1[1] === d2[1] && d1[2] < d2[2]) 
-        ) {
-            min = dates[i]; 
-        }
-    }
-
+		if(dates[i] < min)
+			min = dates[i];
+	}
     return min; 
 }
 
